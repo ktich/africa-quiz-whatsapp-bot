@@ -98,7 +98,7 @@ def check(country, response):
     capital = info['capital'].lower()
     print(capital)
     if response==capital:
-        return True
+        return capital, True
     else:
         return False
 
