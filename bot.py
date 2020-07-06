@@ -66,12 +66,14 @@ def bot():
         
         elif current_country is not None:
             country = random_country(number)
-            if check(current_country, incoming_msg):
+            r = requests.get(f'https://restcountries.eu/rest/v2/alpha/{country}')
+            info = json.loads(r.text)
+            capital = info['capital']
+            if incoming_msg==capital.lower():
                 increase_score(number, score)
                 msg.body(f"Correct! \n\nWhat is the capital of: {country}")
             else:
-                correct_answer = check(current_country, incoming_msg)
-                msg.body(f"Incorrect! The correct answer is {correct_answer}.\n\nWhat is the capital of: {country}")
+                msg.body(f"Incorrect! The correct answer is {capital}.\n\nWhat is the capital of: {country}")
             responded = True
     
     if not exists:
@@ -97,11 +99,10 @@ def check(country, response):
     r = requests.get(f'https://restcountries.eu/rest/v2/alpha/{country}')
     info = json.loads(r.text)
     capital = info['capital'].lower()
-    print(capital)
     if response==capital:
         return True
     else:
-        return capital
+        return False
 
 def increase_score(number, score):
     score = score + 1
