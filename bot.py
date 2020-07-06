@@ -95,15 +95,6 @@ def random_country(number):
     country = info['name']
     return country
 
-def check(country, response):
-    r = requests.get(f'https://restcountries.eu/rest/v2/alpha/{country}')
-    info = json.loads(r.text)
-    capital = info['capital'].lower()
-    if response==capital:
-        return True
-    else:
-        return False
-
 def increase_score(number, score):
     score = score + 1
     db.execute("UPDATE users SET score = :score WHERE phone = :number", {'score': score, 'number': number})
