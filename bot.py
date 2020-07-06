@@ -70,7 +70,7 @@ def bot():
                 increase_score(number, score)
                 msg.body(f"Correct! \n\nWhat is the capital of: {country}")
             else:
-                msg.body(f"Incorrect! \nWhat is the capital of: {country}")
+                msg.body(f"Incorrect! \nThe answer is {current_country}.\n\nWhat is the capital of: {country}")
             responded = True
     
     if not exists:
