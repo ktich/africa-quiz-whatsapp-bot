@@ -71,7 +71,7 @@ def bot():
                 msg.body(f"Correct! \n\nWhat is the capital of: {country}")
             else:
                 correct_answer = check(current_country, incoming_msg)
-                msg.body(f"Incorrect! \nThe answer is {correct_answer}.\n\nWhat is the capital of: {country}")
+                msg.body(f"Incorrect! The correct answer is {correct_answer}.\n\nWhat is the capital of: {country}")
             responded = True
     
     if not exists:
@@ -99,9 +99,9 @@ def check(country, response):
     capital = info['capital'].lower()
     print(capital)
     if response==capital:
-        return capital, True
+        return True
     else:
-        return False
+        return capital
 
 def increase_score(number, score):
     score = score + 1
