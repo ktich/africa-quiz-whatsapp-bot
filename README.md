@@ -4,11 +4,12 @@
 
 A WhatsApp bot to improve your knowledge of African countries. Right now, the bot helps you memorize capital cities! Eventually, I'd like to include a timer so it will be a timed quiz.
 
-### Tools
+### Tools & Technologies
 - Python 3
 - Twilio
 - PostgresSQL
 - Flask
+- Heroku
 
 ### Resources
 https://www.twilio.com/blog/build-a-whatsapp-chatbot-with-python-flask-and-twilio
