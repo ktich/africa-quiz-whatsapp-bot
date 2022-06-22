@@ -1,6 +1,6 @@
 Flask==1.1.2
 jsonschema==3.0.1
-numpy==1.16.2
+numpy==1.22.0
 numpydoc==0.8.0
 pandas==1.0.3
 pandocfilters==1.4.2
